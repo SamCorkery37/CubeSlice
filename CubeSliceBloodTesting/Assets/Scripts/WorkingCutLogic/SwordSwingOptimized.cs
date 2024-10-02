@@ -186,6 +186,12 @@ public class SwordSwingOptimized : MonoBehaviour
 
             StartCoroutine(ReturnBloodPrefabToPool(instance, 5f));  // Adjust delay as needed
 
+            ApplyBloodToSword();
+            Debug.Log("Attempting to call ShowBloodSplatter()");
+            ShowBloodSplatter();
+
+
+
             Debug.Log("Blood prefab spawned from sword for: " + other.name);
 
             // Reset cooldown frame counter
@@ -381,7 +387,7 @@ public class SwordSwingOptimized : MonoBehaviour
 
     void ShowAllBloodEffects(Collider other)
     {
-        HandleBloodPrefab(other);
+        // HandleBloodPrefab(other);
         ApplyBloodToSword();
         Debug.Log("Attempting to call ShowBloodSplatter()");
         ShowBloodSplatter();
